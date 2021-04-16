@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
-
+// import PropTypes from 'prop-types'
 import './App.css';
 import Navbar from './components/layout/Navbar'
 import Users from './components/users/Users';
@@ -27,7 +27,7 @@ class App extends Component {
     this.setState({ users: res.data, loading: false })
   }
 
-  // Search Users
+  // Search Usersy
   searchUsers = async (text) => {
     this.setState({ loading: true })
 
@@ -36,10 +36,8 @@ class App extends Component {
     this.setState({ users: res.data.items, loading: false })
   }
 
-  setAlert = (msg, type) => {
-    this.setState({ alert: { msg, type } })
-    setTimeout(() => this.setState({ alert: null }), 5000)
-  }
+  setAlert = (msg, type) => this.setState({ alert: { msg, type } })
+
   // Clear Users from state
   clearUsers = () => this.setState({ users: [], loading: false })
 

@@ -27,7 +27,7 @@ class App extends Component {
     this.setState({ users: res.data, loading: false })
   }
 
-  // Search Users
+  // Search Usersy
   searchUsers = async (text) => {
     this.setState({ loading: true })
 
@@ -36,10 +36,8 @@ class App extends Component {
     this.setState({ users: res.data.items, loading: false })
   }
 
-  setAlert = (msg, type) => {
-    this.setState({ alert: { msg, type } })
-    setTimeout(() => this.setState({ alert: null }), 5000)
-  }
+  setAlert = (msg, type) => this.setState({ alert: { msg, type } })
+
   // Clear Users from state
   clearUsers = () => this.setState({ users: [], loading: false })
 
