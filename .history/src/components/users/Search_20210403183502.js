@@ -1,31 +1,42 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 
-const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
+class Search extends Component {
 
-    const [text, setText] = useState('');
+    state = {
+        text: ''
+    }
 
-    const onChange = e => setText(e.target.value);
+    onChange = e => this.setState({ [e.target.name]: e.target.value });
     
-    const onSubmit = e => {
+    onSubmit = e => {
         e.preventDefault();
-        if(text === '') {
-            setAlert('Please enter something...', 'light')
+        if(this.state.text === '') {
+            this.props.setAlert('Please enter something...', 'light')
         } else {
-            searchUsers(text)
+            this.props.searchUsers(this.state.text)
+            // this.setState({ text: '' })
         }
     }
+
+    static propTypes = {
+        searchUsers: PropTypes.func.isRequired,
+        clearUsers: PropTypes.func.isRequired,
+        showClear: PropTypes.bool.isRequired
+      }
     
+    render() {
+        const { clearUsers, showClear } = this.props;
         return (
             <div>
-                <form onSubmit={onSubmit} className="form">
+                <form onSubmit={this.onSubmit} className="form">
                     <input 
                         type="text" 
                         name="text" 
                         placeholder="Search Users..." 
-                        value={text}
-                        onChange={onChange}
+                        value={this.state.text}
+                        onChange={this.onChange}
                     />    
                     <input 
                         type="submit" 
@@ -41,12 +52,7 @@ const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
                 }
             </div>
         )
-}
-
-Search.propTypes = {
-    searchUsers: PropTypes.func.isRequired,
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired
+    }
 }
 
 export default Search

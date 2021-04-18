@@ -14,18 +14,19 @@ const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
             setAlert('Please enter something...', 'light')
         } else {
             searchUsers(text)
+            // this.setState({ text: '' })
         }
     }
     
         return (
             <div>
-                <form onSubmit={onSubmit} className="form">
+                <form onSubmit={this.onSubmit} className="form">
                     <input 
                         type="text" 
                         name="text" 
                         placeholder="Search Users..." 
-                        value={text}
-                        onChange={onChange}
+                        value={this.state.text}
+                        onChange={this.onChange}
                     />    
                     <input 
                         type="submit" 
