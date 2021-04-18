@@ -11,7 +11,7 @@ const RepoItem = ({ repo }) => {
                 <p><strong>Language: </strong> {repo.language ? <i>{repo.language}</i> : <i>Note Specify</i>}</p>
             </div>
             <div>
-                <p><i className="fa fa-star"></i> {repo.watchers}</p>
+                <p><i className="fas fa-star fa-1x"></i> {repo.watchers}</p>
             </div>
         </div>
     )

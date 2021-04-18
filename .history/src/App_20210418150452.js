@@ -28,7 +28,13 @@ const App = () => {
     setUsers(res.data)
     // eslint-disable-next-line
   }, [])
+  
+  // async componentDidMount() {
+  //   this.setState({ loading: true })
+  //   const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
+  //   this.setState({ users: res.data, loading: false })
+  // }
 
   // Search Users
   const searchUsers = async (text) => {
@@ -56,7 +62,7 @@ const App = () => {
   const getUserRepos = async username => {
     setLoading(true)
 
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=15&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=10&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
     setRepos(res.data)
     setLoading(false)
@@ -84,7 +90,7 @@ const App = () => {
                     <Search 
                       searchUsers={searchUsers} 
                       clearUsers={clearUsers} 
-                      showClear={users.length > 0 ? true : false}
+                      // showClear={users.length > 0 ? true : false}
                       setAlert={showAlert}
                     />
                     <Users loading={loading} users={users} />

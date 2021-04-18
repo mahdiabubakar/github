@@ -1,17 +1,16 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Component, useEffect } from 'react';
 import Spinner from '../layout/Spinner';
 import Repos from '../repos/Repos';
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 
-const User = ({ user, loading, repos, getUser, getUserRepos, match }) => {
+const User = ({ user, loading, repos, getUser, match }) => {
 
     useEffect(() => {
         getUser(match.params.login);
         getUserRepos(match.params.login);
-        // eslint-disable-next-line
-    }, [])
+    })
 
 
         const { 
@@ -90,7 +89,7 @@ User.propTypes = {
     getUser: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
     getUserRepos: PropTypes.func.isRequired,
-    repos: PropTypes.array.isRequired,
+    repos: PropTypes.arry.isRequired,
 }
 
 export default User
