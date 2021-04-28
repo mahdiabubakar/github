@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 
 
 const RepoItem = ({ repo }) => {
+    console.log(repo)
     return (
         <div className='card' style={repoItem}>
             <div>
                 <a href={repo.html_url}>{repo.name}</a>
+                {/* <p><strong>Language: </strong> {repo.language && <i>{repo.language}</i> : <i>Note Specify</i>}</p> */}
                 { repo.language && <p><strong>Language: </strong>{repo.language}</p> }
             </div>
             <div>

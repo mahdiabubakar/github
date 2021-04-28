@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 
 const RepoItem = ({ repo }) => {
+    console.log(repo)
     return (
         <div className='card' style={repoItem}>
             <div>

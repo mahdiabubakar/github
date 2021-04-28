@@ -20,15 +20,13 @@ const App = () => {
   const [alert, setAlert] = useState(null);
 
 
-  useEffect(() => {
+  useEffect( async () => {
     setLoading(true);
-    const func = async () => {
-      const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+    const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
-      setLoading(false)
-      setUsers(res.data)
-    }
-    func();
+    setLoading(false)
+    setUsers(res.data)
+    // eslint-disable-next-line
   }, [])
 
 

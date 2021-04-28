@@ -28,7 +28,8 @@ const App = () => {
       setLoading(false)
       setUsers(res.data)
     }
-    func();
+
+    // eslint-disable-next-line
   }, [])
 
 
