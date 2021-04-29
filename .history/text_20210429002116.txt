@@ -1,0 +1,19 @@
+History
+On 28 May 2015, CEO Brendan Eich (creator of JavaScript and former CEO of Mozilla Corporation) and CTO Brian Bondy founded Brave Software.[7] On 20 January 2016 Brave Software launched the first version of Brave with an ad-blocking feature, and announced plans for a privacy-respecting ad-feature and a revenue-sharing program.
+
+In June 2018, Brave released a pay-to-surf test-version of the browser. This version of Brave came preloaded with approximately 250 ads, and sent a detailed log of the user's browsing activity to Brave for the short-term purpose of testing this functionality. Brave announced that expanded trials would follow.[9] Later that month Brave added support for Tor in its desktop browser's private-browsing mode.
+
+Until December 2018, Brave ran on a fork of Electron called Muon, which they marketed as a "more secure fork". Nevertheless, Brave developers moved to Chromium, citing a need to ease their maintenance burden.[11] Brave Software released the final Muon-based version with the intention that it would stop working and instructed users to update as its end-of-life approached.
+
+In June 2019, Brave started testing a new ad-blocking rule-matching algorithm implemented in Rust, replacing the previous C++ one. The uBlock Origin and Ghostery algorithms inspired the new logic, which Brave claims to be on average 69 times faster than the previous algorithm.
+
+Brave launched its stable release, version 1.0, on 13 November 2019, while having 8.7 million monthly active users overall.[14] At the time, it had approximately 3 million active users on a daily basis. Brave 1.0, running on Android, iOS, Windows 10, macOS, or Linux, integrated "almost all of Brave's marquee features across all platforms", according to engadget.
+
+In November 2020, Brave reported having 20 million monthly users[16][17] and in February 2021 it passed 25 million monthly active users mark.
+
+In January 2021, Brave integrated Ecosia as one of its search engine options.
+
+In March 2021, Brave acquired Tailcat, a search engine developed by Cliqz.
+
+In April 2021, Brave becomes the first browser to be added to the Epic Games Store.
+
