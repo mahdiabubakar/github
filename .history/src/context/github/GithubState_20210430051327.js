@@ -37,7 +37,7 @@ const GithubState = (props) => {
     const searchUsers = async (text) => {
         setLoading()
 
-        const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=${githubClientId}&client_secret=${githubClientSecret}`);
+        const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
         dispatch({
             type: SEARCH_USERS,
@@ -50,7 +50,7 @@ const GithubState = (props) => {
             setLoading();
 
             const func = async () => {
-                const res = await axios.get(`https://api.github.com/users?client_id=${githubClientId}&client_secret=${githubClientSecret}`);
+                const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&  client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
                 dispatch({
                     type: GET_USERS,
                     payload: res.data
@@ -63,7 +63,7 @@ const GithubState = (props) => {
         const getUser = async (username) => {
             setLoading()
         
-            const res = await axios.get(`https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`);
+            const res = await axios.get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
         
             dispatch({
                 type: GET_USER,
@@ -76,7 +76,7 @@ const GithubState = (props) => {
     const getUserRepos = async username => {
         setLoading(true)
     
-        const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=15&sort=created:asc&client_id=${githubClientId}&client_secret=${githubClientSecret}`);
+        const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=15&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
     
         // setRepos(res.data)
         // setLoading(false)
