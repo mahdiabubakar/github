@@ -5,7 +5,7 @@ const Alert = () => {
 
   const alertContext = useContext(AlertContext)
   
-  const { alert } = alertContext;
+  const { alert } = alertContext
   
   return (
     alert !== null && (

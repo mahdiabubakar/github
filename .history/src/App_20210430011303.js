@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { useState, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar'
@@ -20,11 +20,11 @@ const App = () => {
           <div className="app">
             <Navbar />  
             <div className="container">
-              <Alert />
+              <Alert alert={alert} />
               <Switch>
                 <Route exact path='/' render={props => (
                     <Fragment>
-                      <Search />
+                      <Search setAlert={showAlert} />
                       <Users />
                     </Fragment>
                   )} />
